@@ -40,12 +40,12 @@ if exist "%dirCurrent%\%dirScript%" (
     del %tmpWget%
     echo.
     echo Up to date     : ToolBox_%%a
-	echo.
-	timeout /t 1 >nul
+    echo.
+    timeout /t 1 >nul
     call %batMenu%
    )
    if "%%a" neq "%%b" (
-	rem -= delete old .toolbox =-
+    rem -= delete old .toolbox =-
     echo Uninstall      : ToolBox_%%a
     rmdir /S /Q "%dirCurrent%\%dirScript%"
     goto top
