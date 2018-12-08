@@ -7,7 +7,7 @@ set tmpWget="%tmp%\wget.tmp"
 if exist %tmpWget% del %tmpWget%
 
 rem -= download json =-
-echo Check for Updates...
+echo Check ToolBox Updates...
 rem -= test internet connection =-
 for /f "tokens=2 delims=[]" %%a in ('ping "github.com" -n 1') do (
  %exeWget% -q "https://api.github.com/repos/Nitrage/Cemu_ToolBox/releases/latest" -O %tmpWget%
@@ -49,8 +49,7 @@ if exist "%dirCurrent%\%dirScript%" (
     if "%%a" equ "%%b" (
      rem -= delete json =-
      del %tmpWget%
-     echo.
-     echo Up to date     : ToolBox_%%a
+     echo Up to date     : ToolBox v%%a
      echo.
      timeout /t 1 >nul
      call %batStart%
@@ -66,7 +65,8 @@ if exist "%dirCurrent%\%dirScript%" (
  )
  if not exist %tmpWget% (
   echo Skipped...
+  echo.
   timeout /t 1 >nul
-  call %batMenu%
+  call %batStart%
  )
 )
